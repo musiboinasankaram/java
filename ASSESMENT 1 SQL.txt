@@ -1,0 +1,242 @@
+mysql> SELECT * FROM WORKER;
++-----------+------------+-----------+--------+---------------------+---------+
+| worker_id | FIRST_NAME | LAST_NAME | SALARY | JOINING_DATE        | HR      |
++-----------+------------+-----------+--------+---------------------+---------+
+|         1 | MOUNIKA    | ARORA     | 100000 | 2014-02-20 09:00:00 | HR      |
+|         2 | NIHARIKA   | VERMA     | 800000 | 2014-06-11 09:00:00 | ADMIN   |
+|         3 | VISHAL     | SINGHAL   | 300000 | 2014-02-20 09:00:00 | HR      |
+|         4 | AMITABH    | SINGH     | 500000 | 2014-02-20 09:00:00 | ADMIN   |
+|         5 | VIVEK      | BHATI     | 500000 | 2014-06-11 09:00:00 | ADMIN   |
+|         6 | VIPUL      | DIWAN     | 200000 | 2014-06-11 09:00:00 | ACCOUNT |
+|         7 | SATISH     | KUMAR     |  75000 | 2014-01-20 09:00:00 | ACCOUNT |
+|         8 | GEETIKA    | CHAUHAN   |  90000 | 2014-06-11 09:00:00 | ADMIN   |
++
+-----------+------------+-----------+--------+---------------------+---------+
+TABLE-WORKER
+mysql> SELECT *FROM BONUS;
++----------+--------------+---------------------+
+| WORK_RID | BONUS_AMOUNT | BONUS_DATA          |
++----------+--------------+---------------------+
+|        1 |         5000 | 2016-02-20 00:00:00 |
+|        2 |         3000 | 2016-06-11 00:00:00 |
+|        3 |         4000 | 2016-02-20 00:00:00 |
+|        4 |         4500 | 2016-02-20 00:00:00 |
+|        5 |         3500 | 2016-06-11 00:00:00 |mysql> SELECT *FROM TITLE1;
++------------+--------------+---------------------+
+| WORKER_RID | WORKER_TITLE | AFFECTED_FROM       |
++------------+--------------+---------------------+
+|          1 | MANAGER      | 2016-02-20 00:00:00 |
+|          2 | EXECUTIVE    | 2016-06-11 00:00:00 |
+|          3 | EXECUTIVE    | 2016-06-11 00:00:00 |
+|          4 | MANAGER      | 2016-06-11 00:00:00 |
+|          5 | ASST.MANAGER | 2016-06-11 00:00:00 |
+|          6 | EXECUTIVE    | 2016-06-11 00:00:00 |
+|          7 | LEAD         | 2016-06-11 00:00:00 |
+|          8 | LEAD         | 2016-06-11 00:00:00 |
++------------+--------------+---------------------+
+
+1 ANS
+mysql> SELECT *FROM WORKER;
++-----------+------------+-----------+--------+---------------------+---------+---------+--------+
+| worker_id | FIRST_NAME | LAST_NAME | SALARY | JOINING_DATE        | HR      | ADDRESS | GENDER |
++-----------+------------+-----------+--------+---------------------+---------+---------+--------+
+|         1 | MOUNIKA    | ARORA     | 100000 | 2014-02-20 09:00:00 | HR      | HYD     | F      |
+|         2 | NIHARIKA   | VERMA     | 800000 | 2014-06-11 09:00:00 | ADMIN   | KPHP    | M      |
+|         3 | VISHAL     | SINGHAL   | 300000 | 2014-02-20 09:00:00 | HR      | HYD     | F      |
+|         4 | AMITABH    | SINGH     | 500000 | 2014-02-20 09:00:00 | ADMIN   | KPHP    | M      |
+|         5 | VIVEK      | BHATI     | 500000 | 2014-06-11 09:00:00 | ADMIN   | HYD     | F      |
+|         6 | VIPUL      | DIWAN     | 200000 | 2014-06-11 09:00:00 | ACCOUNT | KPHP    | M      |
+|         7 | SATISH     | KUMAR     |  75000 | 2014-01-20 09:00:00 | ACCOUNT | HYD     | F      |
+|         8 | GEETIKA    | CHAUHAN   |  90000 | 2014-06-11 09:00:00 | ADMIN   | KPHP    | M      |
++-----------+------------+-----------+--------+---------------------+---------+---------+--------+
+2 ANS
+
+mysql> SELECT FIRST_NAME AS WORKER_NAME FROM WORKER;
++-------------+
+| WORKER_NAME |
++-------------+
+| MOUNIKA     |
+| NIHARIKA    |
+| VISHAL      |
+| AMITABH     |
+| VIVEK       |
+| VIPUL       |
+| SATISH      |
+| GEETIKA     |
+
+3ANS(A)
+mysql> DELETE FROM WORKER WHERE WORKER_ID=4 OR WORKER_ID=8;
+Query OK, 2 rows affected (0.00 sec)
+
+mysql> SELECT *FROM WORKER;
++-----------+------------+-----------+--------+---------------------+---------+---------+--------+
+| worker_id | FIRST_NAME | LAST_NAME | SALARY | JOINING_DATE        | HR      | ADDRESS | GENDER |
++-----------+------------+-----------+--------+---------------------+---------+---------+--------+
+|         1 | MOUNIKA    | ARORA     | 100000 | 2014-02-20 09:00:00 | HR      | HYD     | F      |
+|         2 | NIHARIKA   | VERMA     | 800000 | 2014-06-11 09:00:00 | ADMIN   | KPHP    | M      |
+|         3 | VISHAL     | SINGHAL   | 300000 | 2014-02-20 09:00:00 | HR      | HYD     | F      |
+|         5 | VIVEK      | BHATI     | 500000 | 2014-06-11 09:00:00 | ADMIN   | HYD     | F      |
+|         6 | VIPUL      | DIWAN     | 200000 | 2014-06-11 09:00:00 | ACCOUNT | KPHP    | M      |
+|         7 | SATISH     | KUMAR     |  75000 | 2014-01-20 09:00:00 | ACCOUNT | HYD     | F      |
++-----
+
+(B)
+mysql> ALTER TABLE WORKER DROP  GENDER;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE WORKER DROP  ADDRESS;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> SELECT *FROM WORKER;
++-----------+------------+-----------+--------+---------------------+---------+
+| worker_id | FIRST_NAME | LAST_NAME | SALARY | JOINING_DATE        | HR      |
++-----------+------------+-----------+--------+---------------------+---------+
+|         1 | MOUNIKA    | ARORA     | 100000 | 2014-02-20 09:00:00 | HR      |
+|         2 | NIHARIKA   | VERMA     | 800000 | 2014-06-11 09:00:00 | ADMIN   |
+|         3 | VISHAL     | SINGHAL   | 300000 | 2014-02-20 09:00:00 | HR      |
+|         5 | VIVEK      | BHATI     | 500000 | 2014-06-11 09:00:00 | ADMIN   |
+|         6 | VIPUL      | DIWAN     | 200000 | 2014-06-11 09:00:00 | ACCOUNT |
+|         7 | SATISH     | KUMAR     |  75000 | 2014-01-20 09:00:00 | ACCOUNT |
++-----------+------------+-----------+-----
+
+4 ANS
+
+
+mysql> SELECT UCASE(FIRST_NAME) FROM WORKER;
++-------------------+
+| UCASE(FIRST_NAME) |
++-------------------+
+| MOUNIKA           |
+| NIHARIKA          |
+| VISHAL            |
+| VIVEK             |
+| VIPUL             |
+| SATISH
+
+5ANS
+
+mysql> SELECT DISTINCT(DEPARTMENT) FROM WORKER;
++------------+
+| DEPARTMENT |
++------------+
+| HR         |
+| ADMIN      |
+| ACCOUNT    |
++------------+
+
+6 ANS
+
+mysql> SELECT MID(FIRST_NAME,1,3) FROM WORKER;
++---------------------+
+| MID(FIRST_NAME,1,3) |
++---------------------+
+| MOU                 |
+| NIH                 |
+| VIS                 |
+| VIV                 |
+| VIP                 |
+| SAT
+
+7 ANS
+
+mysql> SELECT FIRST_NAME FROM WORKER WHERE WORKER_ID IN (3,7);
++------------+
+| FIRST_NAME |
++------------+
+| VISHAL     |
+| SATISH     |
+
+8 ANS
+
+mysql> SELECT FIRST_NAME FROM WORKER WHERE WORKER_ID NOT IN (3,7);
++------------+
+| FIRST_NAME |
++------------+
+| MOUNIKA    |
+| NIHARIKA   |
+| VIVEK      |
+| VIPUL      |
++------------+
+
+10 ANS
+
+mysql> SELECT * FROM WORKER WHERE FIRST_NAME LIKE '%A';
++-----------+------------+-----------+--------+---------------------+------------+
+| worker_id | FIRST_NAME | LAST_NAME | SALARY | JOINING_DATE        | DEPARTMENT |
++-----------+------------+-----------+--------+---------------------+------------+
+|         1 | MOUNIKA    | ARORA     | 100000 | 2014-02-20 09:00:00 | HR         |
+|         2 | NIHARIKA   | VERMA     | 800000 | 2014-06-11 09:00:00 | ADMIN      |
++-----------+------------+-------
+
+11 ANS
+
+
+mysql> SELECT * FROM WORKER WHERE FIRST_NAME LIKE '%H';
++-----------+------------+-----------+--------+---------------------+------------+
+| worker_id | FIRST_NAME | LAST_NAME | SALARY | JOINING_DATE        | DEPARTMENT |
++-----------+------------+-----------+--------+---------------------+------------+
+|         7 | SATISH     | KUMAR     |  75000 | 2014-01-20 09:00:00 | ACCOUNT    |
++-----------+------------+
+
+12 ANS
+
+mysql> SELECT * FROM WORKER WHERE SALARY BETWEEN 100000 AND 500000;
++-----------+------------+-----------+--------+---------------------+------------+
+| worker_id | FIRST_NAME | LAST_NAME | SALARY | JOINING_DATE        | DEPARTMENT |
++-----------+------------+-----------+--------+---------------------+------------+
+|         1 | MOUNIKA    | ARORA     | 100000 | 2014-02-20 09:00:00 | HR         |
+|         3 | VISHAL     | SINGHAL   | 300000 | 2014-02-20 09:00:00 | HR         |
+|         5 | VIVEK      | BHATI     | 500000 | 2014-06-11 09:00:00 | ADMIN      |
+|         6 | VIPUL      | DIWAN     | 200000 | 2014-06-11 09:00:00 | ACCOUNT    |
++-----------+------------+----
+14 ANS
+
+mysql> SELECT * FROM WORKER WHERE WORKER_ID LIMIT 5;
++-----------+------------+-----------+--------+---------------------+------------+
+| worker_id | FIRST_NAME | LAST_NAME | SALARY | JOINING_DATE        | DEPARTMENT |
++-----------+------------+-----------+--------+---------------------+------------+
+|         1 | MOUNIKA    | ARORA     | 100000 | 2014-02-20 09:00:00 | HR         |
+|         2 | NIHARIKA   | VERMA     | 800000 | 2014-06-11 09:00:00 | ADMIN      |
+|         3 | VISHAL     | SINGHAL   | 300000 | 2014-02-20 09:00:00 | HR         |
+|         5 | VIVEK      | BHATI     | 500000 | 2014-06-11 09:00:00 | ADMIN      |
+|         6 | VIPUL      | DIWAN     | 200000 | 2014-06-11 09:00:00 | ACCOUNT    |
++-----------+------------+-----------+--------+---------------------+------------+
+
+16 ANS
+mysql> SELECT * FROM BONUS AS T1 RIGHT OUTER JOIN TITLE1 AS T2 ON T1.WORK_RID=T2.WORKER_RID;
++----------+--------------+---------------------+------------+--------------+---------------------+
+| WORK_RID | BONUS_AMOUNT | BONUS_DATA          | WORKER_RID | WORKER_TITLE | AFFECTED_FROM       |
++----------+--------------+---------------------+------------+--------------+---------------------+
+|        1 |         5000 | 2016-02-20 00:00:00 |          1 | MANAGER      | 2016-02-20 00:00:00 |
+|        2 |         3000 | 2016-06-11 00:00:00 |          2 | EXECUTIVE    | 2016-06-11 00:00:00 |
+|        3 |         4000 | 2016-02-20 00:00:00 |          3 | EXECUTIVE    | 2016-06-11 00:00:00 |
+|        4 |         4500 | 2016-02-20 00:00:00 |          4 | MANAGER      | 2016-06-11 00:00:00 |
+|        5 |         3500 | 2016-06-11 00:00:00 |          5 | ASST.MANAGER | 2016-06-11 00:00:00 |
+|     NULL |         NULL | NULL                |          6 | EXECUTIVE    | 2016-06-11 00:00:00 |
+|     NULL |         NULL | NULL                |          7 | LEAD         | 2016-06-11 00:00:00 |
+|     NULL |         NULL | NULL                |          8 | LEAD         | 2016-06-11 00:00:00 |
++----------+--------------+---------------------+------------+--------------+---------------------+
+
+mysql> SELECT * FROM BONUS INNER JOIN TITLE1 WHERE BONUS.WORK_RID=TITLE1.WORKER_RID;
++----------+--------------+---------------------+------------+--------------+---------------------+
+| WORK_RID | BONUS_AMOUNT | BONUS_DATA          | WORKER_RID | WORKER_TITLE | AFFECTED_FROM       |
++----------+--------------+---------------------+------------+--------------+---------------------+
+|        1 |         5000 | 2016-02-20 00:00:00 |          1 | MANAGER      | 2016-02-20 00:00:00 |
+|        2 |         3000 | 2016-06-11 00:00:00 |          2 | EXECUTIVE    | 2016-06-11 00:00:00 |
+|        3 |         4000 | 2016-02-20 00:00:00 |          3 | EXECUTIVE    | 2016-06-11 00:00:00 |
+|        4 |         4500 | 2016-02-20 00:00:00 |          4 | MANAGER      | 2016-06-11 00:00:00 |
+|        5 |         3500 | 2016-06-11 00:00:00 |          5 | ASST.MANAGER | 2016-06-11 00:00:00 |
++----------+--------------+---------------------+-------
+
+mysql> SELECT * FROM BONUS AS T1 LEFT OUTER JOIN TITLE1 AS T2 ON T1.WORK_RID=T2.WORKER_RID;
++----------+--------------+---------------------+------------+--------------+---------------------+
+| WORK_RID | BONUS_AMOUNT | BONUS_DATA          | WORKER_RID | WORKER_TITLE | AFFECTED_FROM       |
++----------+--------------+---------------------+------------+--------------+---------------------+
+|        1 |         5000 | 2016-02-20 00:00:00 |          1 | MANAGER      | 2016-02-20 00:00:00 |
+|        2 |         3000 | 2016-06-11 00:00:00 |          2 | EXECUTIVE    | 2016-06-11 00:00:00 |
+|        3 |         4000 | 2016-02-20 00:00:00 |          3 | EXECUTIVE    | 2016-06-11 00:00:00 |
+|        4 |         4500 | 2016-02-20 00:00:00 |          4 | MANAGER      | 2016-06-11 00:00:00 |
+|        5 |         3500 | 2016-06-11 00:00:00 |          5 | ASST.MANAGER | 2016-06-11 00:00:00 |
++----------+--------------+---------------------+------------+--------------+---------------------+
