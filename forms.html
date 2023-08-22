@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>html forms</title>
+</head>
+<body bgcolor="pink">
+<center>
+<fieldset>
+<legend align=center>fill the Form</legend>
+<form action="https://codinghub.co.in/">
+ <center><label for="fname">FirstName : </label>
+ <input type="text" name="fname" value="sankar" id="abc" required><br><br>
+ <label for="lname">LastName : </label>
+ <input type="text" name="lname" placeholder="@@@@" id="abc"></center>
+ <h3>choose your gender<h3>
+ <input type="radio" name="gender">
+ <label> male</label>  <br>
+ <input type="radio" name="gender">
+ <label> Female</label>
+<h3>select  course <h3>  
+ <input type="checkbox" name="course">
+ <label> java</label><br> 
+ <input type="checkbox" name="course">
+ <label> css</label> <br>
+ <input type="checkbox" name="course">
+ <label> html</label><br> 
+ <input type="checkbox" name="course">
+ <label> python</label> <br>
+ <input type="checkbox" name="course">
+ <label> java script</label><br><br>
+ <label for="number" > Roll Number :</label>
+ <input type="number"><br><br>
+ <label for="myfile" > select file :</label>
+ <input type="file" name="myfile"><br><br>
+ <label for="number" > text area :</label>
+ <input type="textarea"><br><br>
+ <label for="number" > date :</label>
+ <input type="date">
+ <br><br>
+ 
+<label >select option: </label>
+<select size=1 multiple required>
+ <optgroup label="study">
+<option value="PG">Pg</option> 
+<option value="UG">ug</option> 
+<option value="SSC">SSC</option> 
+<option value="INTER">INTER</option> 
+<option value="LKG">LKG</option>
+</optgroup>
+</select>
+<br><br>
+<div >
+<label>choose course</label>
+<input list="course">
+<datalist id="course" >
+   <option>java</option>
+   <option>java1</option>
+   <option>java2</option>
+   <option>java4</option>
+</datalist>
+</div><br><br>
+ 
+ <label for="number" > password :</label>
+ <input type="password"  placeholder="12@sankar"><br><br>
+ <label for="gname" >E-mail       :</label>
+ <input type="email"  value="@gmail.com"name="Gname"><br><br>
+ <center><input style="color:red;background-color:yellow;" type="submit" value="Register"></center><br><br>
+ <input type="button" value="click" onclick="alter('this is warning')" ></input><br><br>
+ <input type="reset" value="reset" ></input>
+ <input type="color"  ></input> 
+</form>
+<h2>ues of progress</h2>
+<label for="file">downloading progress</label>
+<progress id="file" value=20 max=100></progress> 
+</fieldset>
+</center>
+</body>
+
+</html>
