@@ -5,5 +5,9 @@ git stash  hello all  welcome to git good evening git is version control  222223
 
 git stash  hello all  welcome to git good evening git is version control  2222234444444 sankaram
 >>>>>>> Stashed changes
+<<<<<<< Updated upstream
 only player to score 5 t20I centuries
 he single handed won the game for india by scoring a century
+=======
+only player to score 5 t20I centuries he played a beautiful innings agianst afganisthan
+>>>>>>> Stashed changes
