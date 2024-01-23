@@ -1,2 +1,8 @@
+<<<<<<< Updated upstream
 hello stash  good evening hello every one welcome to git
 good to hear
+=======
+ good evening hello every one welcome to git
+good to hear :wq
+
+>>>>>>> Stashed changes
