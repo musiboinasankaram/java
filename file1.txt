@@ -1,5 +1,2 @@
-<<<<<<< Updated upstream
-git stash  hello all  welcome to git good evening git is version control  2222234444444444444444445555555555555 sohel 
-=======
-git stash  hello all  welcome to git good evening git is version control  2222234444444444444444445555555555555 sankaram 
->>>>>>> Stashed changes chiranjeevi
+
+git stash  hello all  welcome to git good evening git is version control  2222234444444
